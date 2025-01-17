@@ -1,5 +1,5 @@
 # cyberlogic-yt-camel-for-beginners
-Code samples demonstrated in the "Apache Camel Complete Beginner's Guide" playlist of the Cyberlogic Consulting's YouTube channel: https://www.youtube.com/@CyberlogicConsulting .<br>
+Code samples demonstrated in the "[Apache Camel Complete Beginner's Guide](https://youtube.com/playlist?list=PLhOKPsimMS-zdKEE_F53TKNROx2uJBPF6&feature=shared)" playlist of the Cyberlogic Consulting's YouTube channel.
 List of topics:
 1. [Building Your First Camel Route](./building-your-first-camel-route/)
 2. [Working With Endpoints](./working-with-endpoints/)
