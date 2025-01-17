@@ -11,7 +11,6 @@ public class Main {
             camelContext.addRoutes(new ExampleRoute());
             camelContext.start();
             Thread.sleep(2000);
-            camelContext.stop();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

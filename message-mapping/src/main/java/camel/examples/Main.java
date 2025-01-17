@@ -19,7 +19,6 @@ public class Main {
 
             camelContext.start();
             Thread.sleep(2000);
-            camelContext.stop();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
