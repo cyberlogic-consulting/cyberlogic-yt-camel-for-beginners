@@ -9,7 +9,7 @@ import org.apache.camel.component.jms.JmsComponent;
 @ApplicationScoped
 public class JmsComponentProducer {
 
-    @Named("artemis")
+    //@Named("artemis")
     public JmsComponent artemis (@Identifier("artemisMQFactory")
                                      ConnectionFactory connectionFactory) {
         JmsComponent result = new JmsComponent();
@@ -17,7 +17,7 @@ public class JmsComponentProducer {
         return result;
     }
 
-    @Named("rabbitmq")
+    //@Named("rabbitmq")
     public JmsComponent rabbitmq (@Identifier("rabbitmqMQFactory")
                                       ConnectionFactory connectionFactory) {
         JmsComponent result = new JmsComponent();
