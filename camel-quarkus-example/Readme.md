@@ -1,4 +1,4 @@
-# Apache Camel with Spring Boot for Beginners
+# Apache Camel with Quarkus for Beginners
 Code samples demonstrated in https://youtu.be/9zQshmkn6zA .
 
 # camel-quarkus-example
