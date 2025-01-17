@@ -6,13 +6,11 @@ import org.apache.camel.impl.DefaultCamelContext;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         try (CamelContext camelContext = new DefaultCamelContext()) {
             camelContext.addRoutes(new ExampleRoute());
             camelContext.start();
             Thread.sleep(2000);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 }

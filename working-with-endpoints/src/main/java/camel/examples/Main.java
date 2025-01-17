@@ -8,7 +8,7 @@ import org.apache.camel.spi.PropertiesComponent;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         try (CamelContext camelContext = new DefaultCamelContext()) {
             camelContext.addRoutes(new ExampleRoute());
             PropertiesComponent properties = camelContext.getPropertiesComponent();
@@ -18,8 +18,6 @@ public class Main {
             
             camelContext.start();
             Thread.sleep(2000);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 }

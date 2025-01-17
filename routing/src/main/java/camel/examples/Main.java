@@ -9,7 +9,7 @@ import org.apache.qpid.jms.JmsConnectionFactory;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         try (CamelContext camelContext = new DefaultCamelContext()) {
             camelContext.addRoutes(new ChoiceExampleRoute());
             camelContext.addRoutes(new RecipientListExampleRoute());
@@ -18,8 +18,6 @@ public class Main {
 
             camelContext.start();
             Thread.sleep(2000000);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 
