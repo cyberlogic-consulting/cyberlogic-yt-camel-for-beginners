@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>camel.examples</groupId>
+    <artifactId>camel-examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>building-your-first-camel-route</module>
+        <module>working-with-endpoints</module>
+        <module>routing</module>
+        <module>message-mapping</module>
+        <module>error-handling</module>
+        <module>testing</module>
+        <module>camel-sb-example</module>
+        <module>camel-quarkus-example</module>
+        <module>working-with-beans</module>
+        <module>variables</module>
+        <module>endpoint-dsl</module>
+    </modules>
+</project>

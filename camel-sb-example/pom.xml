@@ -8,9 +8,13 @@
     <name>camel-sb-example</name>
     <description>camel-sb-example</description>
     <properties>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot-version>3.4.0</spring-boot-version>
         <camel.version>4.9.0</camel.version>
-        <java.version>17</java.version>
     </properties>
 
     <dependencyManagement>
@@ -66,6 +70,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot-version}</version>
             </plugin>
         </plugins>
     </build>
