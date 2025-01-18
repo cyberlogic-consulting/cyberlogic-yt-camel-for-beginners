@@ -9,7 +9,8 @@ public class KafkaExampleRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("kafka:{{camel.kafka-route.topic}}?brokers={{camel.kafka-route.brokers-string}}" +
-                "&valueDeserializer=org.apache.kafka.common.serialization.StringDeserializer")
+                "&valueDeserializer=org.apache.kafka.common.serialization.StringDeserializer" +
+                "&autoOffsetReset=earliest")
                 .routeId(ROUTE_ID)
                 .log("Received from kafka: ${body}")
                 .process(exchange -> exchange.getMessage().setBody(
