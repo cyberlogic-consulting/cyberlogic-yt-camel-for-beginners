@@ -10,11 +10,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native-micro -t quarkus/camel-quarkus-example .
+# docker build -f src/main/docker/Dockerfile.native-micro -t quarkus/camel-quarkus-examples .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/camel-quarkus-example
+# docker run -i --rm -p 8080:8080 quarkus/camel-quarkus-examples
 #
 ###
 FROM quay.io/quarkus/quarkus-micro-image:2.0
