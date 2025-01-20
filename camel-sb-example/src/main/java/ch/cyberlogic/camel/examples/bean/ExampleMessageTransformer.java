@@ -2,9 +2,9 @@ package ch.cyberlogic.camel.examples.bean;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("exampleMessageTransformer")
+@Service("exampleMessageTransformer")
 public class ExampleMessageTransformer {
 
     private final ExampleMessageBodyMapper bodyMapper;
