@@ -1,5 +1,8 @@
 package ch.cyberlogic.camel.examples.route;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Properties;
 import org.apache.camel.CamelContext;
@@ -20,6 +23,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.testcontainers.shaded.org.apache.commons.io.FileUtils;
 import org.testcontainers.shaded.org.awaitility.Awaitility;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -59,6 +63,7 @@ public class KafkaExampleRouteIntegrationTest {
 
     @BeforeAll
     public static void setUpBeforeClass() throws Exception {
+        FileUtils.deleteDirectory(new File("./src/test/resources/files"));
         Properties props = new Properties();
         props.load(KafkaExampleRouteIntegrationTest.class.getClassLoader().getResourceAsStream("application-it.properties"));
         topic = props.getProperty("camel.kafka-route.topic");
