@@ -10,16 +10,16 @@ import org.apache.camel.impl.DefaultCamelContext;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        CamelContext camelContext = new DefaultCamelContext();
+        try (CamelContext camelContext = new DefaultCamelContext()) {
 
-        camelContext.addRoutes(new ExampleRoute());
-        camelContext.addRoutes(new MethodBindingExampleRoute());
+            camelContext.addRoutes(new ExampleRoute());
+            camelContext.addRoutes(new MethodBindingExampleRoute());
 
-        camelContext.getRegistry().bind("exampleBean", new ExampleBean());
-        camelContext.getRegistry().bind("methodBindingExampleBean", new MethodBindingExampleBean());
+            camelContext.getRegistry().bind("exampleBean", new ExampleBean());
+            camelContext.getRegistry().bind("methodBindingExampleBean", new MethodBindingExampleBean());
 
-        camelContext.start();
-        Thread.sleep(2000);
-        camelContext.stop();
+            camelContext.start();
+            Thread.sleep(2000);
+        }
     }
 }
