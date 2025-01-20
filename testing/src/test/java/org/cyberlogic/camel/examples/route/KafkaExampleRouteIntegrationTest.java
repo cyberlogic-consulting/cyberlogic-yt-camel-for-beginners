@@ -24,6 +24,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @EnabledIfSystemProperty(named = "test.integration.enable", matches = "true")
+
 public class KafkaExampleRouteIntegrationTest {
 
     @Order(1)

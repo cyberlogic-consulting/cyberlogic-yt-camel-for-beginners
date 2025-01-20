@@ -1,24 +1,30 @@
 package org.cyberlogic.camel.examples.route;
 
+import org.apache.camel.CamelContext;
+import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.AdviceWith;
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
-import org.apache.camel.test.junit5.CamelTestSupport;
+import org.apache.camel.test.infra.core.CamelContextExtension;
+import org.apache.camel.test.infra.core.DefaultCamelContextExtension;
+import org.apache.camel.test.infra.core.annotations.ContextFixture;
+import org.apache.camel.test.infra.core.annotations.RouteFixture;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
-public class ExampleRouteTestWithSupport extends CamelTestSupport {
+public class ExampleRouteExtensionTest {
+
+    @RegisterExtension
+    protected static CamelContextExtension camelContextExtension = new DefaultCamelContextExtension();
 
     private static final String mockExampleRouteToFileOutput = "mock:exampleRouteToFileOutput";
 
     private static final String directExampleRouteTest = "direct:exampleRouteTest";
 
-    @Override
-    public void beforeTestExecution(ExtensionContext context) throws Exception {
-        super.beforeTestExecution(context);
-
+    @ContextFixture
+    public void setUp(CamelContext camelContext) throws Exception {
+        camelContext.addRoutes(new ExampleRoute());
         AdviceWith.adviceWith(
-                context(),
+                camelContext,
                 ExampleRoute.ROUTE_ID,
                 route -> route
                         .interceptSendToEndpoint("file:src/main/resources/files/output")
@@ -26,26 +32,22 @@ public class ExampleRouteTestWithSupport extends CamelTestSupport {
                         .to(mockExampleRouteToFileOutput)
         );
         AdviceWith.adviceWith(
-                context(),
+                camelContext,
                 ExampleRoute.ROUTE_ID,
                 route -> route
                         .replaceFromWith(directExampleRouteTest)
         );
     }
 
-    @Override
-    protected RouteBuilder createRouteBuilder() throws Exception {
-        return new ExampleRoute();
-    }
-
     @Test
     void testExampleRoute() throws Exception {
         String testBody = "Bye World";
-        MockEndpoint toFileOutput = getMockEndpoint(mockExampleRouteToFileOutput);
+        MockEndpoint toFileOutput = camelContextExtension.getMockEndpoint(mockExampleRouteToFileOutput);
         toFileOutput.expectedMessageCount(1);
         toFileOutput.message(0).body().isEqualTo(testBody.toUpperCase());
+        ProducerTemplate producer = camelContextExtension.getProducerTemplate();
 
-        template().sendBody(directExampleRouteTest, testBody);
+        producer.sendBody(directExampleRouteTest, testBody);
 
         toFileOutput.assertIsSatisfied();
     }
