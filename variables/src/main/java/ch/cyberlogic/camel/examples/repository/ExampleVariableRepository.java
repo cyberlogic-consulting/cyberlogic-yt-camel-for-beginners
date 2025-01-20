@@ -10,7 +10,7 @@ public class ExampleVariableRepository implements VariableRepository {
 
     public static final String ID = "exampleVariableRepository";
 
-    private final Map<String, Object> store = new HashMap<String, Object>();
+    private final Map<String, Object> store = new HashMap<>();
 
     private static final Logger log = LoggerFactory.getLogger(ExampleVariableRepository.class);
 
