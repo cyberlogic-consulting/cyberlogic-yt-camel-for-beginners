@@ -84,10 +84,8 @@ public class ExampleRouteTest {
                 .to(sftpEndpointBuilder)
                 .send();
 
-        Thread.sleep(1000);
         Exchange actualFileFromErrorFolderExchange = consumerTemplate.receive(
-                sftpEndpointBuilder.fileName("done.txt").getUri(),
-                5000);
+                sftpEndpointBuilder.fileName("done.txt").getUri());
 
         assertNotNull(actualFileFromErrorFolderExchange);
         Message actualFileFromErrorFolder = actualFileFromErrorFolderExchange.getMessage();
