@@ -1,8 +1,6 @@
 package ch.cyberlogic.camel.examples.route;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Properties;
 import org.apache.camel.CamelContext;

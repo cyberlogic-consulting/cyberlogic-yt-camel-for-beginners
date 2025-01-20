@@ -1,7 +1,7 @@
 package ch.cyberlogic.camel.examples;
 
-import ch.cyberlogic.camel.examples.route.RecipientListExampleRoute;
 import ch.cyberlogic.camel.examples.route.ChoiceExampleRoute;
+import ch.cyberlogic.camel.examples.route.RecipientListExampleRoute;
 import jakarta.jms.ConnectionFactory;
 import org.apache.camel.CamelContext;
 import org.apache.camel.component.jms.JmsComponent;
