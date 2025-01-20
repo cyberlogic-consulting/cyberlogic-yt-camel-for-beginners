@@ -36,3 +36,10 @@ build/
 log/
 *.pkc
 .jython_cache
+
+### Examples output ###
+/building-your-first-camel-route/src/main/resources/files/output/
+/message-mapping/src/main/resources/files/output/
+/testing/src/main/resources/files/output/
+/working-with-beans/src/main/resources/files/output/
+/working-with-endpoints/src/main/resources/files/output/
