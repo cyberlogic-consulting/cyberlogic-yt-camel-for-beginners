@@ -14,10 +14,10 @@ public class RecipientListExampleRoute extends RouteBuilder {
                 .process(new Processor() {
                     @Override
                     public void process(Exchange exchange) throws Exception {
-                        Object departments = exchange.getMessage().getHeader("departments");
+                        String departments = exchange.getMessage().getHeader("departments", String.class);
                         List<String> whereToSend = new ArrayList<>();
                         if (departments != null) {
-                            Arrays.asList(departments.toString().split(",")).forEach(department -> whereToSend.add("jms:" + department + ".queue"));
+                            Arrays.asList(departments.split(",")).forEach(department -> whereToSend.add("jms:" + department + ".queue"));
                         }
                         exchange.getMessage().setHeader("whereToSend", whereToSend);
                     }
