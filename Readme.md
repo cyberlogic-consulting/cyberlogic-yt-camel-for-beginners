@@ -4,7 +4,7 @@ Code samples demonstrated in the [Apache Camel Complete Beginner's Guide](https:
 ## How to prepare all the examples at once
 You can clean, build, test and package _all_ the provided examples in this folder in one go:
 ```shell script
-./mvnv clean package
+./mvnw clean package
 ```
 
 Please note that some examples require a running docker client on your machine. Watch the corresponding videos or checkout the `Readme.md` files for more detail. 

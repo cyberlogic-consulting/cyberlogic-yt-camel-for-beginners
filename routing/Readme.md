@@ -8,5 +8,5 @@ docker run --detach --name mycontainer -p 61616:61616 -p 8161:8161 --rm apache/a
 ```
 You can either run the java main class `ch.cyberlogic.camel.examples.Main` inside your IDE by yourself or use the following maven command:
 ```shell script
-./mvnv org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
+./mvnw org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
 ```

@@ -4,11 +4,11 @@ Code samples demonstrated in https://youtu.be/qaKVn4hwI70 .
 ## How to run
 You can either run the java main class `ch.cyberlogic.camel.examples.Main` inside your IDE by yourself or use the following maven command:
 ```shell script
-./mvnv org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
+./mvnw org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
 ```
 
 ## How to run tests
 Tests can be run either inside your IDE or using the following maven command:
 ```shell script
-./mvnv test
+./mvnw test
 ```

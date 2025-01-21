@@ -21,7 +21,7 @@ You can run your application in dev mode that enables live coding using:
 ## How to run tests
 Tests can be run either inside your IDE or using the following maven command:
 ```shell script
-./mvnv test
+./mvnw test
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
