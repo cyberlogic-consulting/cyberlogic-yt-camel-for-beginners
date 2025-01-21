@@ -4,7 +4,7 @@ Code samples demonstrated in video that is not yet published.
 ## How to run
 To run the example, first enable local sftp server (need docker client installed):
 ```shell script
-docker compose up -f ./src/main/resources/sftp/docker/docker-compose.yml
+docker compose -f ./src/main/resources/sftp/docker/docker-compose.yml up
 ```
 And then run the java main class `ch.cyberlogic.camel.examples.Main` either inside your IDE by yourself or use the following maven command:
 ```shell script
