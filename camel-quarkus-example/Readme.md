@@ -8,11 +8,20 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
 ## Running the application in dev mode
-
+To run the example, first enable Artemis MQ (need docker client installed):
+```shell script
+docker run --detach --name mycontainer -p 61616:61616 -p 8161:8161 --rm apache/activemq-artemis:2.38.0-alpine
+```
 You can run your application in dev mode that enables live coding using:
 
 ```shell script
 ./mvnw quarkus:dev
+```
+
+## How to run tests
+Tests can be run either inside your IDE or using the following maven command:
+```shell script
+./mvnv test
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
