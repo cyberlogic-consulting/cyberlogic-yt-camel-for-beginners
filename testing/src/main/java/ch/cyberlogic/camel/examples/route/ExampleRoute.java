@@ -7,7 +7,7 @@ public class ExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "exampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("file:src/main/resources/files?noop=true")
                 .routeId(ROUTE_ID)
                 .process(exchange -> exchange.getMessage().setBody(

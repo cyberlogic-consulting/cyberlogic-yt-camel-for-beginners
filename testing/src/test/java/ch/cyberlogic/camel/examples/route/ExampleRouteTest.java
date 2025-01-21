@@ -41,7 +41,7 @@ public class ExampleRouteTest {
     }
 
     @AfterAll
-    public static void tearDown() throws Exception {
+    public static void tearDown() {
         camelContext.stop();
     }
 

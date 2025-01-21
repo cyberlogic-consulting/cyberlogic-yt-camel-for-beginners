@@ -7,7 +7,7 @@ public class ExampleRoute extends RouteBuilder {
     public static final String ID = "ExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("jms:{{example.queue.input.name}}")
                 .routeId(ID)
                 .log("Received request: ${body}")

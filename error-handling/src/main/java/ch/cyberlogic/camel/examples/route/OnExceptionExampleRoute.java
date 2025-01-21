@@ -5,7 +5,7 @@ import org.apache.camel.builder.RouteBuilder;
 public class OnExceptionExampleRoute extends RouteBuilder {
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
 
         from("timer:ticker?period=1s")
                 .routeConfigurationId("example-error-handling")

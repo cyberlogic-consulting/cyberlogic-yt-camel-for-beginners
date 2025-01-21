@@ -9,7 +9,7 @@ public class VariableReceiveExampleRoute extends RouteBuilder {
     public static final String SERVICE_ROUTE_ID = "variableReceiveExampleServiceRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("timer:tick?period=3s")
                 .routeId(ROUTE_ID)
                 .setBody(constant("Initial request body"))

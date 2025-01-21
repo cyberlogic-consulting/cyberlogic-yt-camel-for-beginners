@@ -19,5 +19,5 @@ Please note that some examples require a running docker client on your machine. 
 7. [Apache Camel with Spring Boot](./camel-sb-example/)
 8. [Apache Camel with Quarkus](./camel-quarkus-example/)
 9. [Working With Beans in Apache Camel](./working-with-beans/)
-9. [Apache Camel Variables](./variables/)
-9. [Apache Camel Endpoint DSL](./endpoint-dsl/)
+10. [Apache Camel Variables](./variables/)
+11. [Apache Camel Endpoint DSL](./endpoint-dsl/)

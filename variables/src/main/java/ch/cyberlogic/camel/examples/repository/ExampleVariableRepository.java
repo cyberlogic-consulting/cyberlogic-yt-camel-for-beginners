@@ -1,10 +1,11 @@
 package ch.cyberlogic.camel.examples.repository;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.apache.camel.spi.VariableRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExampleVariableRepository implements VariableRepository {
 

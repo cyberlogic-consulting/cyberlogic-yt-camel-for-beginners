@@ -7,7 +7,7 @@ public class VariableExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "variableExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("timer:tick?period=3s")
                 .routeId(ROUTE_ID)
                 .setVariable("myVariable", constant("My variable value"))

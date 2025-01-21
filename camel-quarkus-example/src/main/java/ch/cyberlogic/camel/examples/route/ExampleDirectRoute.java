@@ -7,7 +7,7 @@ public class ExampleDirectRoute extends RouteBuilder {
     public static final String ID = "ExampleDirectRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("direct:examples-direct-route")
                 .routeId(ID)
                 .log("Received request: ${body}");

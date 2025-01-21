@@ -5,7 +5,7 @@ import org.apache.camel.builder.RouteConfigurationBuilder;
 public class ErrorHandlingConfigurationExample extends RouteConfigurationBuilder {
 
     @Override
-    public void configuration() throws Exception {
+    public void configuration() {
         routeConfiguration("example-error-handling").
         onException(Exception.class)
                 .log("Exception: ${exception}")

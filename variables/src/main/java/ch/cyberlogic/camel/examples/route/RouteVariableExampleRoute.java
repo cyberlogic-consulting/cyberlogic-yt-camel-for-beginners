@@ -9,7 +9,7 @@ public class RouteVariableExampleRoute extends RouteBuilder {
     public static final String SECOND_ROUTE_ID = "routeVariableExampleSecondRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("timer:tick?period=3s")
                 .routeId(ROUTE_ID)
                 .setVariable("route:myVariable", constant("My variable value"))

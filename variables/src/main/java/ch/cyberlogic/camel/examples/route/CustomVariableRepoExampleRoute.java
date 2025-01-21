@@ -8,7 +8,7 @@ public class CustomVariableRepoExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "customVariableRepoExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("timer:tick?period=3s")
                 .routeId(ROUTE_ID)
                 .setVariable(

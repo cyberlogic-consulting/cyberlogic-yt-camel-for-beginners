@@ -1,8 +1,5 @@
 package ch.cyberlogic.camel.examples.route;
 
-import java.io.File;
-import java.util.List;
-import java.util.Properties;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.ProducerTemplate;
@@ -23,6 +20,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.testcontainers.shaded.org.apache.commons.io.FileUtils;
 import org.testcontainers.shaded.org.awaitility.Awaitility;
+
+import java.io.File;
+import java.util.List;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -46,7 +47,7 @@ public class KafkaExampleRouteIntegrationTest {
     private static String fileName;
 
     @ContextFixture
-    public void setUpProperties(CamelContext camelContext) throws Exception {
+    public void setUpProperties(CamelContext camelContext) {
         camelContext.getPropertiesComponent().setLocation("classpath:application-it.properties");
 
         Properties props = new Properties();
@@ -82,7 +83,7 @@ public class KafkaExampleRouteIntegrationTest {
     }
 
     @Test
-    void testKafkaExampleRoute() throws Exception {
+    void testKafkaExampleRoute() {
         String testBody = "Bye World";
         ProducerTemplate producerTemplate = camelContextExtension.getProducerTemplate();
         ConsumerTemplate consumerTemplate = camelContextExtension.getConsumerTemplate();

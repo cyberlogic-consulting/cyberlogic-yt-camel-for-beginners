@@ -7,7 +7,7 @@ public class KafkaExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "kafkaExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("kafka:{{camel.kafka-route.topic}}?brokers={{camel.kafka-route.brokers-string}}" +
                 "&valueDeserializer=org.apache.kafka.common.serialization.StringDeserializer" +
                 "&autoOffsetReset=earliest")

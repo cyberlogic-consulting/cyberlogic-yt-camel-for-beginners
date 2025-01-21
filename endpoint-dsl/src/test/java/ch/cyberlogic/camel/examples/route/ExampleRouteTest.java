@@ -1,7 +1,6 @@
 package ch.cyberlogic.camel.examples.route;
 
 import ch.cyberlogic.camel.examples.component.LocalSftp;
-import java.util.Properties;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.Exchange;
@@ -18,6 +17,8 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.MountableFile;
+
+import java.util.Properties;
 
 import static org.apache.camel.builder.endpoint.StaticEndpointBuilders.sftp;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -74,7 +75,7 @@ public class ExampleRouteTest {
     }
 
     @Test
-    void exampleRouteTest() throws InterruptedException {
+    void exampleRouteTest() {
         String contents = "Hello world!";
         String fileName = "hello.txt";
 

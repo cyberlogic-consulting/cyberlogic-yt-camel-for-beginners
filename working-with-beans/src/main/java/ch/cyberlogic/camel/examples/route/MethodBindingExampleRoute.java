@@ -7,7 +7,7 @@ public class MethodBindingExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "methodBindingExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("file:src/main/resources/files/input/binding?noop=true")
                 .routeId(ROUTE_ID)
                 .bean("methodBindingExampleBean", "transform(${body})")

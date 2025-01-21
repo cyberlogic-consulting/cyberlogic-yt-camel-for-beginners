@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder;
 
 public class ChoiceExampleRoute extends RouteBuilder {
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("jms:input.queue")
                 .log("Body: ${body}, Headers: ${headers}")
                 .choice()

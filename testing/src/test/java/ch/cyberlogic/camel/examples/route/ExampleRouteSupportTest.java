@@ -34,7 +34,7 @@ public class ExampleRouteSupportTest extends CamelTestSupport {
     }
 
     @Override
-    protected RouteBuilder createRouteBuilder() throws Exception {
+    protected RouteBuilder createRouteBuilder() {
         return new ExampleRoute();
     }
 

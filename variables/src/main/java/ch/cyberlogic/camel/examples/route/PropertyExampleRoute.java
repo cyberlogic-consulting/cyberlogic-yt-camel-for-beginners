@@ -7,7 +7,7 @@ public class PropertyExampleRoute extends RouteBuilder {
     public static final String ROUTE_ID = "propertyExampleRoute";
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("timer:tick?period=3s")
                 .routeId(ROUTE_ID)
                 .setProperty("myProperty", constant("My property value"))
