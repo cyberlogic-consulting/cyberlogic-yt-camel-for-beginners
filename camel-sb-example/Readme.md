@@ -6,13 +6,13 @@ To run the example, first enable Artemis MQ (need docker client installed):
 ```shell script
 docker run --detach --name mycontainer -p 61616:61616 -p 8161:8161 --rm apache/activemq-artemis:2.38.0-alpine
 ```
-And then run the spring boot application either inside your IDE by yourself or using the following maven command:
+And then run the spring boot application either inside your IDE by yourself or use the following maven command:
 ```shell script
-mvn spring-boot:run
+./mvnv spring-boot:run
 ```
 
 ## How to run tests
-Tests are run either inside your IDE or using the following maven command:
+Tests can be run either inside your IDE or using the following maven command:
 ```shell script
-mvn test
+./mvnv test
 ```

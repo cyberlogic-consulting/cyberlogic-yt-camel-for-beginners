@@ -6,13 +6,13 @@ To run the example, first enable local sftp server (need docker client installed
 ```shell script
 docker compose up -f ./src/main/resources/sftp/docker/docker-compose.yml
 ```
-And then run the java main class `ch.cyberlogic.camel.examples.Main` either inside your IDE by yourself or using the following maven command:
+And then run the java main class `ch.cyberlogic.camel.examples.Main` either inside your IDE by yourself or use the following maven command:
 ```shell script
-mvn org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
+./mvnv org.codehaus.mojo:exec-maven-plugin:java -D"exec.mainClass=ch.cyberlogic.camel.examples.Main"
 ```
 
 ## How to run tests
-Tests are run either inside your IDE or using the following maven command:
+Tests can be run either inside your IDE or using the following maven command:
 ```shell script
-mvn test
+./mvnv test
 ```
