@@ -1,5 +1,5 @@
 # Working With Apache Camel Endpoint DSL for Beginners
-Code samples demonstrated in video that is not yet published.
+Code samples demonstrated in https://youtu.be/3JBwhJhhZl0 .
 
 ## How to run
 To run the example, first enable local sftp server (need docker client installed):
