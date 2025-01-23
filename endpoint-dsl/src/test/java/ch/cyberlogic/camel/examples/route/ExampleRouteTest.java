@@ -33,7 +33,7 @@ public class ExampleRouteTest {
             .withExposedPorts(22)
             .withCopyFileToContainer(MountableFile.forClasspathResource("it/ssh_host_ed25519_key", 0777),
                     "/etc/ssh/ssh_host_ed25519_key")
-            .withCommand("user:password:::/tmp/files");
+            .withCommand("user:password:::tmp/files");
 
     private CamelContext camelContext;
 

@@ -1,7 +1,7 @@
 services:
   local_sftp:
     image: atmoz/sftp:alpine
-    command: "user:password:::/tmp/files"
+    command: "user:password:::tmp/files"
     container_name: local_sftp
     ports:
       - "22:22"
