@@ -16,7 +16,7 @@ public class ExampleRoute extends RouteBuilder {
                 .to(sftpEndpoint().fileName("done.txt"));
     }
 
-    private SftpEndpointBuilder sftpEndpoint() {
+    static SftpEndpointBuilder sftpEndpoint() {
         return sftp("localSftp", "{{sftp.host}}:{{sftp.port}}/{{sftp.directory}}")
                 .username("{{sftp.username}}")
                 .password("{{sftp.password}}")

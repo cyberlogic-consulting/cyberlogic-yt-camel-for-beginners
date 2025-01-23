@@ -1,12 +1,12 @@
 package ch.cyberlogic.camel.examples.route;
 
 import ch.cyberlogic.camel.examples.component.LocalSftp;
+import java.util.Properties;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.Exchange;
 import org.apache.camel.FluentProducerTemplate;
 import org.apache.camel.Message;
-import org.apache.camel.builder.endpoint.dsl.SftpEndpointBuilderFactory.SftpEndpointBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.spi.PropertiesComponent;
 import org.junit.jupiter.api.AfterEach;
@@ -18,9 +18,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.MountableFile;
 
-import java.util.Properties;
-
-import static org.apache.camel.builder.endpoint.StaticEndpointBuilders.sftp;
+import static ch.cyberlogic.camel.examples.route.ExampleRoute.sftpEndpoint;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -40,12 +38,6 @@ public class ExampleRouteTest {
     private FluentProducerTemplate producerTemplate;
 
     private ConsumerTemplate consumerTemplate;
-
-    private final SftpEndpointBuilder sftpEndpointBuilder =
-            sftp("localSftp", "{{sftp.host}}:{{sftp.port}}/{{sftp.directory}}")
-            .username("{{sftp.username}}")
-            .password("{{sftp.password}}")
-            .knownHostsFile("{{sftp.knownHosts}}");
 
     @BeforeEach
     void setUp() throws Exception {
@@ -82,11 +74,11 @@ public class ExampleRouteTest {
         producerTemplate
                 .withBody(contents)
                 .withHeader(Exchange.FILE_NAME, fileName)
-                .to(sftpEndpointBuilder)
+                .to(sftpEndpoint())
                 .send();
 
         Exchange actualDoneFileExchange = consumerTemplate.receive(
-                sftpEndpointBuilder.fileName("done.txt").getUri());
+                sftpEndpoint().fileName("done.txt").getUri());
 
         assertNotNull(actualDoneFileExchange);
         Message actualDoneFile = actualDoneFileExchange.getMessage();
