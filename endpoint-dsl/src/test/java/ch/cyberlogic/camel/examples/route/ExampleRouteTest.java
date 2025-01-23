@@ -85,13 +85,13 @@ public class ExampleRouteTest {
                 .to(sftpEndpointBuilder)
                 .send();
 
-        Exchange actualFileFromErrorFolderExchange = consumerTemplate.receive(
+        Exchange actualDoneFileExchange = consumerTemplate.receive(
                 sftpEndpointBuilder.fileName("done.txt").getUri());
 
-        assertNotNull(actualFileFromErrorFolderExchange);
-        Message actualFileFromErrorFolder = actualFileFromErrorFolderExchange.getMessage();
-        assertNotNull(actualFileFromErrorFolder);
-        assertEquals("done.txt", actualFileFromErrorFolder.getHeader(Exchange.FILE_NAME));
-        assertEquals(contents, actualFileFromErrorFolder.getBody(String.class));
+        assertNotNull(actualDoneFileExchange);
+        Message actualDoneFile = actualDoneFileExchange.getMessage();
+        assertNotNull(actualDoneFile);
+        assertEquals("done.txt", actualDoneFile.getHeader(Exchange.FILE_NAME));
+        assertEquals(contents, actualDoneFile.getBody(String.class));
     }
 }

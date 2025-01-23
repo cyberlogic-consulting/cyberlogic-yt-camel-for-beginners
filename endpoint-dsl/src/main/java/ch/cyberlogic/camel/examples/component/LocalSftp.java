@@ -6,7 +6,7 @@ public class LocalSftp {
 
     public SftpComponent localSftp() {
         SftpComponent localSftp = new SftpComponent();
-        return new SftpComponent();
+        return localSftp;
     }
 
 }
