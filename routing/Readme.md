@@ -1,5 +1,5 @@
 # Apache Camel Routing Patterns for Beginners
-Code samples demonstrated in https://www.youtube.com/watch?v=d74rGcoeg64 .
+Code samples demonstrated in https://youtu.be/48LO_rmxRgc .
 
 ## How to run
 To run the example, first enable Artemis MQ (need docker client installed):
