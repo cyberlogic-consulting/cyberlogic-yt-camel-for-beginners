@@ -1,5 +1,5 @@
 # Apache Camel with Spring Boot for Beginners
-Code samples demonstrated in https://youtu.be/y2h5sUYDl34 .
+Code samples demonstrated in https://youtu.be/Xj7oYF1PEZU .
 
 ## How to run
 To run the example, first enable Artemis MQ (need docker client installed):
