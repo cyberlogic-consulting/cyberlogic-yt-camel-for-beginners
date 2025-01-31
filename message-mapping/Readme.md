@@ -1,5 +1,5 @@
 # Apache Camel Message Mapping for Beginners
-Code samples demonstrated in https://youtu.be/5SWEfr4DTaU .
+Code samples demonstrated in https://youtu.be/t776QALO-pc .
 
 ## How to run
 You can either run the java main class `ch.cyberlogic.camel.examples.Main` inside your IDE by yourself or use the following maven command:
