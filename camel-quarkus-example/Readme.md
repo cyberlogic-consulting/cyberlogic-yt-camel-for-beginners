@@ -1,5 +1,5 @@
 # Apache Camel with Quarkus for Beginners
-Code samples demonstrated in https://youtu.be/9zQshmkn6zA .
+Code samples demonstrated in https://youtu.be/eubnxoY0xlA .
 
 # camel-quarkus-example
 
