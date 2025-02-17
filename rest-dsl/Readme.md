@@ -29,3 +29,7 @@ curl http://localhost:8080/petstore/api/pet/0 -X PUT -H "Content-Type: applicati
 curl http://localhost:8080/petstore/api/pet/1 -X PUT -H "Content-Type: application/json" -d "<your updated json string here>" -i
 curl http://localhost:8080/petstore/api/pet/2 -X PUT -H "Content-Type: application/json" -d "<your updated json string here>" -i
 ```
+To get an OpenApi schema, you can use the following command:
+```shell script
+curl http://localhost:8080/petstore/api/api-doc
+```
