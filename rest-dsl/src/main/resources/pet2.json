@@ -1,0 +1,17 @@
+{
+  "category": {
+    "id": 0,
+    "name": "category3"
+  },
+  "name": "lizard",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "tag3"
+    }
+  ],
+  "status": "booked"
+}

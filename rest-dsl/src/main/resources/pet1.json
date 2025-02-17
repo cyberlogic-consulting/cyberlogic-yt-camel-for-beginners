@@ -1,0 +1,17 @@
+{
+  "category": {
+    "id": 0,
+    "name": "category2"
+  },
+  "name": "cat",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "tag2"
+    }
+  ],
+  "status": "available"
+}

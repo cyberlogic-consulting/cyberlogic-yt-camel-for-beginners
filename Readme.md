@@ -21,3 +21,4 @@ Please note that some examples require a running docker client on your machine. 
 9. [Working With Beans in Apache Camel](./working-with-beans/)
 10. [Apache Camel Variables](./variables/)
 11. [Apache Camel Endpoint DSL](./endpoint-dsl/)
+12. [Apache Camel REST DSL](./rest-dsl/)

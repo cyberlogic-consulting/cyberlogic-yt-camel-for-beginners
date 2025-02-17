@@ -19,5 +19,6 @@
         <module>working-with-beans</module>
         <module>variables</module>
         <module>endpoint-dsl</module>
+        <module>rest-dsl</module>
     </modules>
 </project>
