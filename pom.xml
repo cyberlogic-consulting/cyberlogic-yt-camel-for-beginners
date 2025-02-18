@@ -20,5 +20,6 @@
         <module>variables</module>
         <module>endpoint-dsl</module>
         <module>rest-dsl</module>
+        <module>camel-sb-soap-server-example</module>
     </modules>
 </project>

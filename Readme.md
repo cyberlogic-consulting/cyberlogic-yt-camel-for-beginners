@@ -22,3 +22,4 @@ Please note that some examples require a running docker client on your machine. 
 10. [Apache Camel Variables](./variables/)
 11. [Apache Camel Endpoint DSL](./endpoint-dsl/)
 12. [Apache Camel REST DSL](./rest-dsl/)
+13. [Apache Camel SOAP server with Spring Boot](./camel-sb-soap-server-example/)

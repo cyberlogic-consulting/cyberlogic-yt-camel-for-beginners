@@ -1,0 +1,105 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://petservice.examples.camel.cyberlogic.ch/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PetServiceService"
+                  targetNamespace="http://petservice.examples.camel.cyberlogic.ch/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://petservice.examples.camel.cyberlogic.ch/"
+                   targetNamespace="http://petservice.examples.camel.cyberlogic.ch/">
+            <xs:element name="getPetsByName" type="tns:getPetsByName"/>
+            <xs:element name="getPetsByNameResponse" type="tns:getPetsByNameResponse"/>
+            <xs:element name="updatePet" type="tns:updatePet"/>
+            <xs:element name="NoSuchPet" type="tns:NoSuchPet"/>
+            <xs:complexType name="pet">
+                <xs:sequence>
+                    <xs:element name="petId" type="xs:long" minOccurs="0"/>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="status" type="xs:string"/>
+                    <xs:element name="birthDate" type="xs:date"/>
+                    <xs:element name="type" type="tns:petType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="petType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Dog"/>
+                    <xs:enumeration value="Cat"/>
+                    <xs:enumeration value="Lizard"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:complexType name="updatePet">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="pet" type="tns:pet"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getPetsByName">
+                <xs:sequence>
+                    <xs:element name="name">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:minLength value="1"/>
+                                <xs:maxLength value="15"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getPetsByNameResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:pet"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="NoSuchPet">
+                <xs:sequence>
+                    <xs:element name="petName" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getPetsByNameResponse">
+        <wsdl:part name="parameters" element="tns:getPetsByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPetsByName">
+        <wsdl:part name="parameters" element="tns:getPetsByName"/>
+    </wsdl:message>
+    <wsdl:message name="updatePet">
+        <wsdl:part name="parameters" element="tns:updatePet"/>
+    </wsdl:message>
+    <wsdl:message name="NoSuchPetException">
+        <wsdl:part name="NoSuchPetException" element="tns:NoSuchPet"/>
+    </wsdl:message>
+    <wsdl:portType name="PetService">
+        <wsdl:operation name="updatePet">
+            <wsdl:input name="updatePet" message="tns:updatePet"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPetsByName">
+            <wsdl:input name="getPetsByName" message="tns:getPetsByName"/>
+            <wsdl:output name="getPetsByNameResponse" message="tns:getPetsByNameResponse"/>
+            <wsdl:fault name="NoSuchPetException" message="tns:NoSuchPetException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PetServiceServiceSoapBinding" type="tns:PetService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="updatePet">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="updatePet">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="getPetsByName">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getPetsByName">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getPetsByNameResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="NoSuchPetException">
+                <soap:fault name="NoSuchPetException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PetServiceService">
+        <wsdl:port name="PetServicePort" binding="tns:PetServiceServiceSoapBinding">
+            <soap:address location="http://localhost:8080/services/pets"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
