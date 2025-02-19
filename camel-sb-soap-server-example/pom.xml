@@ -20,16 +20,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- CXF BOM -->
-            <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-bom</artifactId>
-                <version>${cxf.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Camel BOM -->
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-bom</artifactId>
@@ -37,8 +27,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!-- Spring Boot BOM -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
