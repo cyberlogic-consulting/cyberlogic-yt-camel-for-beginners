@@ -24,3 +24,4 @@ Please note that some examples require a running docker client on your machine. 
 12. [Apache Camel REST DSL](./rest-dsl/)
 13. [Apache Camel SOAP server with Spring Boot](./camel-sb-soap-server-example/)
 14. [Apache Camel SOAP client with Spring Boot](./camel-sb-soap-client-example/)
+15. [Working with SQL databases in Apache Camel](./working-with-sql-databases/)

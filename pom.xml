@@ -22,5 +22,6 @@
         <module>rest-dsl</module>
         <module>camel-sb-soap-server-example</module>
         <module>camel-sb-soap-client-example</module>
+        <module>working-with-sql-databases</module>
     </modules>
 </project>
