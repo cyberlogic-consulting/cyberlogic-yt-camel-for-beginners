@@ -1,5 +1,5 @@
 # Working With SQL Databases in Apache Camel for Beginners
-Code samples demonstrated in a video that is not yet published.
+Code samples demonstrated in https://youtu.be/Nix3W8NJpTk .
 
 ## How to run
 To run the example, first enable local postgresql database (need docker client installed):
