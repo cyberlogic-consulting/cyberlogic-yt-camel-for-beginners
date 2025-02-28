@@ -1,5 +1,5 @@
 # Creating SOAP server with Apache Camel and Spring Boot for Beginners
-Code samples demonstrated in a video that is not yet published.
+Code samples demonstrated in https://youtu.be/2NXIhZSZvMc .
 
 ## How to run
 You can either run the application inside your IDE by yourself or use the following maven command:
